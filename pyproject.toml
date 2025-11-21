@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "braincomua-playwright-project"
+version = "0.1.0"
+description = "parsing brain.com.ua with playwright"
+authors = ["Igor <Aleshichev.git@email.ua>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.2.8"
+playwright = "^1.56.0"
+python-dotenv = "^1.2.1"
+psycopg2-binary = "^2.9.11"
+pandas = "^2.3.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
