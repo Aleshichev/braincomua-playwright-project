@@ -2,11 +2,13 @@
 Module for collecting product data using Playwright.
 """
 
-import random
-from time import sleep
 import logging
+import random
 import re
-from playwright.sync_api import Page, TimeoutError as PlaywrightTimeout
+from time import sleep
+
+from playwright.sync_api import Page
+from playwright.sync_api import TimeoutError as PlaywrightTimeout
 
 
 def clean_text(text):

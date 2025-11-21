@@ -2,10 +2,12 @@
 Module for searching and navigating to products using Playwright.
 """
 
+import logging
 import random
 from time import sleep
-import logging
-from playwright.sync_api import Page, TimeoutError as PlaywrightTimeout
+
+from playwright.sync_api import Page
+from playwright.sync_api import TimeoutError as PlaywrightTimeout
 
 
 def search_product(page: Page, product_name: str) -> bool:

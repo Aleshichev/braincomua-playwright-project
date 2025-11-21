@@ -2,8 +2,9 @@
 Playwright browser configuration with anti-detection settings.
 """
 
-from playwright.sync_api import sync_playwright
 import logging
+
+from playwright.sync_api import sync_playwright
 
 
 def get_browser_args() -> list:

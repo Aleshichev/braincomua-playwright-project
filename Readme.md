@@ -47,29 +47,6 @@ python manage.py migrate
 python modules/1_playwright_parser.py
 ```
 
-## 📁 Project Structure
-
-```
-.
-├── braincomua_project/          # Django project
-│   ├── parser_app/              # Django application
-│   │   └── models.py            # Product model
-│   └── manage.py
-├── modules/
-│   ├── config/
-│   │   ├── playwright_config.py # Browser configuration
-│   │   └── logger_config.py     # Logging setup
-│   ├── utils/
-│   │   ├── collect_products_playwright.py  # Data collection
-│   │   └── search_product_playwright.py    # Product search
-│   ├── 1_playwright_parser.py              # Main script
-│   └── load_django.py                      # Django loader
-├── results/
-│   └── products.csv             # CSV export
-├── docker-compose.yml           # PostgreSQL
-└── pyproject.toml               # Dependencies
-```
-
 ## 🔧 Features
 
 - ✅ Search products by name
