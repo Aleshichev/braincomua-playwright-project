@@ -43,7 +43,7 @@ def get_context_options() -> dict:
     }
 
 
-def create_browser_and_context(headless: bool = False):
+def create_browser_and_context(headless: bool):
     """
     Create Playwright browser and context with anti-detection settings.
 

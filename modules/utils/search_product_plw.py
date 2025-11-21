@@ -19,7 +19,7 @@ def search_product(page: Page, product_name: str) -> bool:
             )
 
             search_input = page.locator(
-                "//div[contains(@class, 'header-bottom-in')]//input[@class='quick-search-input']"
+                "xpath=//div[contains(@class, 'header-bottom-in')]//input[@class='quick-search-input']"
             )
 
             search_input.wait_for(state="visible", timeout=10000)
@@ -32,7 +32,7 @@ def search_product(page: Page, product_name: str) -> bool:
             sleep(random.uniform(1, 3))
 
             search_button = page.locator(
-                "//input[@type='submit' and @class='qsr-submit' and @value='Знайти']"
+                "xpath=//input[@type='submit' and @class='qsr-submit' and @value='Знайти']"
             )
             search_button.wait_for(state="visible", timeout=10000)
             search_button.click()
@@ -61,7 +61,8 @@ def go_to_first_product(page: Page) -> bool:
         try:
             logging.info(f"Navigating to first product, attempt {attempt + 1}")
 
-            first_product = page.locator('(//div[@data-stock="1"])[1]//a').first
+            first_product = page.locator('xpath=//div[@data-stock="1"][1]//a').first
+            # first_product = page.locator('xpath=//div[@data-stock="1"]//a').first
 
             first_product.wait_for(state="visible", timeout=5000)
 

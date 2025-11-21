@@ -20,7 +20,7 @@ from config.logger_config import setup_logging
 
 
 # utils imports
-# from .utils.collect_products_playwright import collect_product_data
+from utils.collect_products_plw import collect_product_data
 from utils.search_product_plw import search_product, go_to_first_product
 def get_url(page: Page, url: str) -> bool:
     for attempt in range(3):
@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
     try:
         # Initialize Playwright headless=True for production
-        playwright, browser, context, page = create_browser_and_context(headless=False)
+        playwright, browser, context, page = create_browser_and_context(headless=True)
 
         # Navigate to the main page
         if not get_url(page, "https://brain.com.ua/"):
@@ -82,6 +82,11 @@ if __name__ == "__main__":
 
         if not go_to_first_product(page):
             raise Exception("Failed to navigate to first product")
+        
+        if not collect_product_data(page):
+            raise Exception("Failed to collect product data")
+
+        # Close browser
         # product_data = save_to_database(product_data: dict)
         # export_to_csv()
 
