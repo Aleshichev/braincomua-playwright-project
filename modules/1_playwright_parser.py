@@ -83,15 +83,15 @@ if __name__ == "__main__":
         if not go_to_first_product(page):
             raise Exception("Failed to navigate to first product")
         
-        if not collect_product_data(page):
-            raise Exception("Failed to collect product data")
-
-        # Close browser
-        # product_data = save_to_database(product_data: dict)
-        # export_to_csv()
-
-        # Finish parser tasks
+        product_data = collect_product_data(page)
         sleep(15)
         close_browser(playwright, browser)
+           
+        if product_data:
+            save_to_database(product_data)
+            export_to_csv()
+
+        logging.info("Parsing completed successfully")
+
     except Exception as e:
         logging.error(f"An error occurred during parsing: {e}")
